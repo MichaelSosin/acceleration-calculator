@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <section id="calculator">
+        
+        <label for="power-input">Insert power:</label>
+        <input type="text" name="power-input" class="power-input"><br>
+
+        <label for="power-type">Select power type:</label>
+        <select name="power-type" id="power-type" class="power-type">
+            <option value="hp">Horse power</option>
+            <option value="ps">British horse power</option>
+            <option value="kw">Kilowatts</option>            
+        </select><br>
+
+        <label for="weight-input"></label>
+        <input type="text" name="weight-input" class="weight-input"><br>
+
+        <label for="weight-type">Select weight type:</label>
+        <select name="weight-type" id="weight-type" class="weight-type">
+            <option value="kilo">Kilogramms</option>         
+            <option value="lbs">Pounds</option>
+        </select><br>
+
+        <label for="drive-type">Select drive type:</label>
+        <select name="drive-type" id="drive-type" class="drive-type">
+            <option value="fwd">FWD</option>
+            <option value="rwd">RWD</option>  
+            <option value="awd">AWD</option>                            
+        </select><br>
+
+        <label for="transmission-type">Select transmission type:</label>
+        <select name="transmission-type" id="transmission-type" class="transmission-type">
+            <option value="man">Manual</option>
+            <option value="auto">Automatic</option>         
+        </select><br>
+
+        <input type="submit" value="Calculate" class="submit">
+
+        <span class="result"></span>
+    </section>
+
+    <script src="js/models.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/presenters.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
