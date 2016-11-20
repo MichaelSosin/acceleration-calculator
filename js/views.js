@@ -15,14 +15,21 @@ class AccelerationView {
     }
 
     addRenderResultHandler(handler) {
-        let _ = this.dom;
-        _.submit.addEventListener('click', () => {
-            _.result.innerHTML = handler(_.powerInput.value,
-                                                 _.powerType.options[_.powerType.options.selectedIndex].value,
-                                                  _.weightInput.value,
-                                                   _.weightType.options[_.weightType.options.selectedIndex].value,
-                                                    _.driveType.options[_.driveType.options.selectedIndex].value,
-                                                     _.transmissionType.options[_.transmissionType.options.selectedIndex].value);
+        this.dom.submit.addEventListener('click', () => {
+            let params = {
+                power: this.dom.powerInput.value,
+                powerType: this.dom.powerType.options[this.dom.powerType.options.selectedIndex].value,
+                weight: this.dom.weightInput.value,
+                weightType: this.dom.weightType.options[this.dom.weightType.options.selectedIndex].value,
+                driveType: this.dom.driveType.options[this.dom.driveType.options.selectedIndex].value,
+                tranmissionType: this.dom.transmissionType.options[this.dom.transmissionType.options.selectedIndex].value
+            };
+
+            if(params.power && params.weight) {
+                this.dom.result.innerHTML = handler(params);
+            } else {
+                this.dom.result.innerHTML = 'Type in all data, please';                
+            }
         });
     }
 }
